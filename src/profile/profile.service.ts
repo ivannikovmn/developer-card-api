@@ -1,15 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { Profile } from './profile.model';
+import { PrismaService } from './../prisma/prisma.service'
 
 @Injectable()
 export class ProfileService {
-  /**
-   * MOCK
-   * Put some real business logic here
-   * Left for demonstration purposes
-   */
+    constructor(
+    private prismaService: PrismaService
+  ) {}  
 
-  async findOneById(id: string): Promise<Profile> {
-    return {} as any;
+  async findOne(): Promise<Profile> {
+    return this.prismaService.profile.findFirstOrThrow();
   }
 }
