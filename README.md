@@ -26,6 +26,7 @@ GraphQL interface:
 * TypeScript
 * Node.js
 * NestJS
+* @nestjs/config
 * GraphQL
 * Apollo Server
 * Prisma
