@@ -6,6 +6,14 @@ Company: IT Solutions Management International Pte. Ltd.
 
 ## Development
 
+### Docker
+
+Start the application with:
+
+```bash
+docker compose up --build
+```
+
 The application runs locally on:
 
 `http://localhost:3020`
@@ -13,6 +21,18 @@ The application runs locally on:
 GraphQL interface:
 
 `http://localhost:3020/graphql`
+
+Database migrations and seed data are applied automatically on startup.
+
+### Local
+
+The application requires PostgreSQL and the `DATABASE_URL` environment variable.
+
+Start the development server with:
+
+```bash
+npm run start:dev
+```
 
 ## Rules
 
