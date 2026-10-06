@@ -9,6 +9,13 @@ export class ProfileService {
   ) {}  
 
   async findOne(): Promise<Profile> {
-    return this.prismaService.profile.findFirstOrThrow();
+    return this.prismaService.profile.findFirstOrThrow({
+      include: {
+        skills: true,
+        experience: true,
+        projects: true,
+        links: true,        
+      },
+    });
   }
 }

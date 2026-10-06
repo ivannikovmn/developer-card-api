@@ -8,8 +8,11 @@ const pool = new Pool({ connectionString });
 const adapter = new PrismaPg(pool);
 const prisma = new PrismaClient({ adapter });
 async function main() {  
-  const profile = await prisma.profile.create({   
-    data: {
+  const profile = await prisma.profile.upsert({
+    where: { slug: "mikhail-ivannikov" },
+    update: {},
+    create: {  
+      slug: "mikhail-ivannikov",
       name: "Mikhail Ivannikov",
       description: "Full-stack JavaScript-разработчик, сфокусированный на TypeScript и backend-разработке. Практический опыт создания веб-приложений на React, Node.js и NestJS, работы с PostgreSQL, REST API, GraphQL, Docker и Git. Разрабатываю проекты от проектирования структуры данных и API до реализации frontend и интеграции компонентов в единое приложение.",
       skills: {
