@@ -34,6 +34,14 @@ Start the development server with:
 npm run start:dev
 ```
 
+## Deployment
+
+The backend is deployed on Render:
+
+`https://developer-card-api.onrender.com/graphql`
+
+The demo deployment uses Render's free PostgreSQL instance and is available for testing until November 5, 2026.
+
 ## Rules
 
 * No AI agents / Codex
